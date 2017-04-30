@@ -18,4 +18,4 @@ $ python -m SimpleHTTPServer
 
 The result will be like this,
 
-![wasm_test.png](wasm_test.png)
+![wasm_test.png](image/wasm_test.png)
