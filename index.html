@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>wasm test</title>
+    <script>
+      var Module = {};
+ 
+      fetch('wasm/wasm_test.wasm')
+        .then((response) => response.arrayBuffer())
+        .then((wasm) => {
+          Module.wasmBinary = wasm;
+ 
+          const scriptElem = document.createElement('script');
+          scriptElem.src = 'wasm/wasm_test.js';
+          scriptElem.addEventListener('load', (e) => {
+              const mainScriptElem = document.createElement('script');
+              mainScriptElem.src = 'src/main.js';
+              document.body.appendChild(mainScriptElem);
+          });
+          document.body.appendChild(scriptElem);
+        });
+    </script>
+  </head>
+  <body>
+    <div id="number"></div>
+    <div id="string"></div>
+    <div id="array"></div>
+  </body>
+</html>
