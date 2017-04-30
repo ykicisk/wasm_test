@@ -5,6 +5,7 @@ Args template of Webassembly with Rust.
 ## dependencies
 
 * rust >= 1.17.0
+* emsdk
 * [just](https://github.com/casey/just)
 * Google Chrome (supports Webassembly)
 
